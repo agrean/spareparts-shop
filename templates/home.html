@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block breadcrumb %}
+	<li class="breadcrumb-item actice">Spareparts</li>
+{% endblock %}
+
+{% block content %}
+	<table class="table">
+		<thead class="thead-inverse">
+			<tr>
+				<th>Item</th>
+				<th>Price</th>
+				<th>Discount</th>
+			</tr>
+		</thead>
+		<tbody class="">
+			{% for item in items %}
+			<tr>
+				<td>{{ item.name }}
+					<small class="text-muted d-block">
+						{{ item.description }}
+					</small>
+				</td>
+				<td>${{ item.price }}</td>
+				<td>{{ item.discount }}%</td>
+			</tr>
+			{% endfor %}
+		</tbody>	
+	</table>
+{% endblock %}
